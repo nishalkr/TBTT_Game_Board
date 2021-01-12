@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board\\TBTT_Logging\\TBTT_Logging.csproj": {}
+    "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Logging\\TBTT_Logging.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board\\TBTT_Logging\\TBTT_Logging.csproj": {
+    "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Logging\\TBTT_Logging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board\\TBTT_Logging\\TBTT_Logging.csproj",
+        "projectUniqueName": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Logging\\TBTT_Logging.csproj",
         "projectName": "TBTT_Logging",
-        "projectPath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board\\TBTT_Logging\\TBTT_Logging.csproj",
+        "projectPath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Logging\\TBTT_Logging.csproj",
         "packagesPath": "C:\\Users\\shyam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board\\TBTT_Logging\\obj\\",
+        "outputPath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Logging\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
