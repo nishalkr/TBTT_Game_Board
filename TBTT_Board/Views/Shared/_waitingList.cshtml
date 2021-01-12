@@ -1,0 +1,20 @@
+﻿@model IEnumerable<TBTT_Board.Models.WaitingViewModel>
+<ul>
+    @foreach (var item in Model)
+    {
+    <li data-jstree='{"icon":"fa fa-user-circle-o","state" : {"opened" : true, "disable_node" : true },"class": "nonMember"}' data-nodeid="@item.MembershipID" data-nodemembershiptype="@item.MembershipType" data-nodestatus="@item.NodeState" data-nodeorderid="@item.OrderID">
+
+        @if ((item.MembershipType == "M") || (item.MembershipType == "G"))
+        {
+            <a href="#">@item.MemberName</a>
+        }
+        else
+        {
+            <a class="nonMember" href="#">@item.MemberName</a>
+        }
+    </li>
+    }
+</ul>
+
+
+
