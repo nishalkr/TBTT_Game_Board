@@ -594,6 +594,19 @@
                     elapsedMinutes = elapsedTimeArray[0];
                     elapsedSeconds = elapsedTimeArray[1];
 
+                    if (elapsedMinutes >= 15) {
+                        $(footcourtID).css('color', 'Red');
+                        $(footcourtID).css('font-weight', 'bold');
+                        $(footcourtID).css('font-size', '20px');
+
+                        //font-weight: bold;
+                    }
+                    else {
+                        $(footcourtID).css('color', 'green');
+                        $(footcourtID).css('font-weight', 'bold');
+                        $(footcourtID).css('font-size', '20px');
+                    }
+
                     if ((elapsedMinutes >= elapsedMinutesConstant) || (hourPassed)) { //>=
                         $(footcourtID).html('');
                     }

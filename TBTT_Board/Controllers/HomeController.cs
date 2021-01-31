@@ -441,6 +441,316 @@ namespace TBTT_Board.Controllers
 
         }
 
+        [HttpPost]
+        public ActionResult AddToWaitingListFromSearch([FromForm] string formData)
+        {
+            //var efd = Helpers.GetFlogDetail("AddToAvailableList", null);
+            //Logger.WriteDiagnostic(efd);
+
+            DateTime availableDate = DateTime.Now.Date;
+
+            Waiting waitingDTO = new Waiting();
+            Member memberDTO = new Member();
+            MemberViewModel memberVM = new MemberViewModel();
+            Game game = new Game();
+            Waiting waiting = new Waiting();
+            int intReturnCode = -2;
+            TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
+            bool isMember = false;
+            bool isGuest = false;
+            string memberName = string.Empty;
+            string memberAliasName = string.Empty;
+            string memberID = string.Empty;
+            string memberGender = string.Empty;
+            string memberScore = string.Empty;
+            Int32 intMemberScore = 1800;
+            string memberDOB = string.Empty;
+            string memberMembershipType = "N";
+            string memberBillingType = "D";
+            Int32 intmemberDOB = 1900;
+            string[] lines = null;
+            string firstLine = string.Empty;
+            string secondLine = string.Empty;
+            string thirdLine = string.Empty;
+            string dataString = string.Empty;
+            string memberIDPattern = @"\%?[ ]*[b]\d+[ ]*[\?]?"; //%B00050?
+            RegexOptions options = RegexOptions.Multiline;
+            options = RegexOptions.IgnoreCase;
+            int intCount = 0;
+            bool isSuccess = true;
+            int intData = 0;
+            string dataPart = string.Empty;
+
+            try
+            {
+                if ((formData != null) && (formData.Length > 0))
+                {
+                    lines = formData.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
+                }
+
+                if ((lines != null) && (lines.Length > 0))
+                {
+                    intCount = 0;
+                    for (int i = 0; i <= lines.Length - 1; i++)
+                    {
+                        dataString = lines[i];
+                        if ((dataString != null) && (dataString.Length > 0))
+                        {
+                            intCount += 1;
+
+                            switch (intCount)
+                            {
+                                case 1:
+                                    firstLine = dataString.Trim().ToUpper();
+                                    break;
+                                case 2:
+                                    secondLine = dataString.Trim();
+                                    break;
+                                default:
+                                    thirdLine = dataString.Trim();
+                                    break;
+                            }
+                        }
+                    }
+                }
+
+                if ((firstLine != null) && (firstLine.Length > 0))
+                {
+                    Match memberIDMatch = Regex.Match(firstLine, memberIDPattern, options);
+
+                    if ((memberIDMatch != null) && (memberIDMatch.Length > 0))
+                    {
+                        dataString = memberIDMatch.ToString().Replace("?", string.Empty).Replace("%", string.Empty);
+                        memberID = dataString.Trim();
+
+                        if ((memberID.IndexOf('9') >= 0) && (memberID.IndexOf('9') <= 1) && (memberID.Length == 6))
+                        {
+                            isGuest = true;
+                            memberMembershipType = "G";
+                            memberBillingType = "D";
+                            memberName = "Guest";
+                        }
+                        if ((memberID.ToUpper().IndexOf('B') >= 0) && (memberID.ToUpper().IndexOf('B') <= 1) && (memberID.Length == 6))
+                        {
+                            isMember = true;
+                            memberMembershipType = "M";
+                            memberBillingType = "M";
+                        }
+                    }
+                }
+
+                if ((secondLine != null) && (secondLine.Length > 0))
+                {
+                    if (secondLine.Length > 10)
+                    {
+                        memberName = secondLine.Substring(0, 9).Trim();
+                    }
+                    else
+                    {
+                        memberName = secondLine.Trim();
+                    }
+
+                }
+
+                if ((thirdLine != null) && (thirdLine.Length > 0))
+                {
+                    dataString = thirdLine.Trim();
+                    lines = null;
+                    lines = thirdLine.Split("-");
+                    if ((lines != null) && (lines.Length > 0))
+                    {
+                        intCount = 0;
+                    }
+                    for (int i = 0; i <= lines.Length - 1; i++)
+                    {
+                        dataString = lines[i];
+                        if ((dataString != null) && (dataString.Length > 0))
+                        {
+                            intCount += 1;
+
+                            switch (intCount)
+                            {
+                                case 1:
+                                    memberGender = dataString.Trim();
+                                    break;
+                                case 2:
+                                    memberDOB = dataString.Trim();
+                                    break;
+                                default:
+                                    memberScore = dataString.Trim();
+                                    break;
+                            }
+                        }
+                    }
+
+                }
+
+                if (memberGender.Length > 0)
+                {
+                    if ((memberGender == "Y") || (memberGender == "F"))
+                    {
+                        memberGender = memberGender.Trim().ToUpper();
+                    }
+                    else
+                    {
+                        memberGender = string.Empty;
+                    }
+                }
+
+                if (memberDOB.Length > 0)
+                {
+                    intData = 0;
+                    isSuccess = Int32.TryParse(memberDOB, out intData);
+
+                    if (intData > 0)
+                    {
+                        intmemberDOB = intData;
+                    }
+                    else
+                    {
+                        intmemberDOB = 1900;
+                    }
+                }
+
+                if (memberScore.Length > 0)
+                {
+                    intData = 0;
+                    isSuccess = Int32.TryParse(memberScore, out intData);
+
+                    if (intData > 0)
+                    {
+                        intMemberScore = intData;
+                    }
+                    else
+                    {
+                        intMemberScore = 0;
+                    }
+                }
+
+
+                if (memberID == string.Empty)
+                {
+                    isMember = false;
+                    isGuest = false;
+                    if ((formData != null) && (formData.Length > 10))
+                    {
+                        memberName = formData.Substring(0, 9).Trim();
+                    }
+                    else
+                    {
+                        memberName = formData.Trim();
+                    }
+                }
+
+                if ((memberName != null) && (memberName.Length > 0))
+                {
+                    memberName = myTI.ToTitleCase(memberName.ToLower().Trim());
+                    memberAliasName = memberName;
+                }
+
+
+
+                memberDTO = _memberService.GetMember(memberID);
+                memberVM = _mapper.Map<MemberViewModel>(memberDTO);
+
+                if ((memberVM != null) && (memberVM.MemberID != null))
+                {
+                    memberID = memberVM.MemberID;
+                    memberName = memberVM.MemberName;
+                    memberAliasName = memberVM.AliasName;
+                }
+                else
+                {
+                    if ((isMember) || (isGuest))
+                    {
+                        if ((memberID != null) && (memberID.Length > 2))
+                        {
+                            intData = 0;
+                            dataPart = string.Empty;
+                            lines = null;
+                            lines = memberName.Split(' ');
+                            string firstPart = string.Empty;
+
+                            if ((lines != null) && (lines.Length > 0))
+                            {
+                                firstPart = lines[0];
+                            }
+
+                            if (isGuest)
+                            {
+                                dataPart = memberID.Substring(2, memberID.Length - 2);
+                                firstPart = "Guest";
+                            }
+                            else
+                            {
+                                dataPart = memberID.Trim().Substring(1, memberID.Length - 1);
+                            }
+
+                            isSuccess = Int32.TryParse(dataPart, out intData);
+                            memberAliasName = $"{intData}-{firstPart}";
+
+                            if (firstPart == string.Empty)
+                            {
+                                return Json(new { success = false, responseText = INVALID_MEMBERSHIPID });
+                            }
+                        }
+
+                        if (memberAliasName == string.Empty)
+                        {
+                            return Json(new { success = false, responseText = INVALID_MEMBERSHIPID });
+                        }
+
+                        memberDTO = new Member();
+                        memberDTO.MemberID = memberID;
+                        memberDTO.MemberName = memberName;
+                        memberDTO.AliasName = memberAliasName;
+                        memberDTO.DateOfBirth = new DateTime(intmemberDOB, 1, 1);
+                        memberDTO.Gender = memberGender;
+                        memberDTO.Score = intMemberScore;
+                        memberDTO.MembershipType = memberMembershipType;
+                        memberDTO.BillingType = memberBillingType;
+                        memberDTO.Status = 1;
+                        _memberService.AddMember(memberDTO);
+                    }
+                }
+
+                if (memberID == string.Empty)
+                {
+                    memberID = Guid.NewGuid().ToString();
+                }
+
+                if (memberAliasName == string.Empty)
+                {
+                    return Json(new { success = false, responseText = INVALID_MEMBERSHIPID });
+                }
+
+                waitingDTO.WaitingListID = 1;
+                waitingDTO.MembershipID = memberID;
+                waitingDTO.MemberName = memberAliasName;
+                waitingDTO.MembershipType = memberMembershipType;
+                waitingDTO.NodeState = true;
+                waitingDTO.BoardStartDate = availableDate;
+                waitingDTO.UpdatedDate = DateTime.Now;
+
+                game = _gameService.GetGameBoardByMemberName(memberAliasName);
+
+                if (game == null)
+                {
+                    intReturnCode = _waitingService.AddToWaitingList(waitingDTO);
+
+                    waiting = _waitingService.GetWaitingListByMemberID(memberID);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, responseText = GENERIC_ERROR });
+            }
+
+            return Json(new { success = false, responseText = GENERIC_ERROR });
+
+        }
+
         [HttpGet]
         public ActionResult GetWaitingList(string PlayingName)
         {
@@ -556,7 +866,7 @@ namespace TBTT_Board.Controllers
             double elapsedTime;
             DateTime today = DateTime.Now;
             DateTime minGameStartDateEST = today;
-            var easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+            var easternZone = TimeZoneInfo.FindSystemTimeZoneById("America/New_York");
             int nodeCount = 0;
             double totalSeconds;
             double totalMinutes = 0;

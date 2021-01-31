@@ -75,11 +75,11 @@ body {
 }
 
 .deep-orange {
-    background-color: #ff5722;
+    background-color: rgba(24, 168, 250, 0.48);
 }
 
 .deep-blue {
-    background-color: #007bff;
+    background-color: rgba(101, 66, 134, 0.66);
 }
 
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YVW4b3lJFbc4bzn/jpQMh5cJDDWh9qN92EqrrhOPUES6z1jhkWftEPAYSTZ6DKi44g54z0twdrD/wzMYfoE9MQ==",
+  "dgSpecHash": "jgkyNax9J4JMj8SeCAWWjVQuu33MOpW0cVTf2/YB5PgW7tIM5XRJR0ODF+r3oXmpGGjrieYYg2L1eEU66Zmkhg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board\\TBTT_Logging\\TBTT_Logging.csproj",
+  "projectFilePath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Logging\\TBTT_Logging.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\shyam\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.0.0\\microsoft.aspnetcore.hosting.abstractions.2.0.0.nupkg.sha512",
     "C:\\Users\\shyam\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.0.0\\microsoft.aspnetcore.hosting.server.abstractions.2.0.0.nupkg.sha512",
