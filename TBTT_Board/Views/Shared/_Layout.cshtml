@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Refresh" content="800">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TBTT Board Management</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.min.css" />
+    <link rel="stylesheet" href="~/css/style.min.css" />
+    <link rel="stylesheet" href="~/css/tbtt.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome-4.7.0/css/font-awesome.min.css" />
+</head>
+<body style="background-color: #5371fd;background-image: url('/lib/BackgroundImage.jpg');background-repeat:no-repeat;background-size:100% 100%">
+    <!--18a8fa, 6106ec-->
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-transparent border-bottom box-shadow mb-3 d-none d-sm-block" style="background-image: url('/lib/navbars.png'); height: 66px; border-bottom: 1px solid #07696e !important;background-repeat:no-repeat;background-size:100% 100%">
+            <div class="container" style="align-items: baseline;">
+                <a class="navbar-brand" target="_blank" asp-area="" asp-controller="Home" asp-action="GetTBTTHelp" style="color:white;">Badminton Game Board</a>
+                @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>*@
+                @*<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>*@
+                <div class="landscape d-sm-none d-md-block" style="text-align:right;">
+                    <a target="_blank" asp-action="GetTBTTHelp" asp-controller="Home"><img src="/lib/TBATT_logo_name_final.png" alt="Triangle Badminton & Table Tennis" style="height:56px" /></a>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style="        background-image: url('/lib/navbars.png');
+        border-bottom: 1px solid #07696e !important;
+        background-repeat: no-repeat;
+        background-size: 100% 100%">
+        <div class="container">
+            &copy; 2020 - Triangle Badminton & Table Tennis @*- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/jquery-ui.js"></script>
+    @*<script src="~/js/jquery.ui.touch-punch.min></script>*@
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/js/underscore.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+    "EnableDiagnostics": "true",
+    "LogDatabaseConnection": "mongodb://localhost:27017/TBTT_Database",
+    "LogDatabaseName": "TBTT_Log"
+}

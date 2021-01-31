@@ -1,0 +1,209 @@
+﻿@*@model IEnumerable<TBTT_Board.Models.AvailableViewModel>*@
+@model TBTT_Board.Models.AvailableViewModel
+
+@{
+    ViewData["Title"] = "Game";
+}
+
+
+<div id="hiddenFields">
+    @if (Model.CourtList != null)
+    {
+        @foreach (var item in Model.CourtList)
+        {
+            <input type="hidden" id=@item.CourtName value=@item.Visibility>
+        }
+
+    }
+</div>
+<div id="divBadmintonGameBoard" class="container-fluid">
+  
+    <div class="form-group row">
+        <div id="divMsg" class="alert alert-danger col-lg-12" role="alert"></div>
+    </div>
+
+
+    <div class="row">
+        <div id="GameBoard" class="col-lg-9">
+            <h2 class="deep-blue white-text" style="border-radius: 15px 0px;padding: 10px;border: 2px solid rgb(174, 2, 221);">Game Board <i class="fa fa-clock-o"></i></h2>
+            <!--<input id="txtGame" class="form-control" type="text" placeholder="Search Court" autofocus maxlength="20" style="padding-bottom:20px" />-->
+            
+            <div class="col-12">
+                <div class="container">
+                    <div class="row">
+                        <select id="ddlGame" class="form-control col-md-12" onchange="onSelectChange()" style="margin-bottom:10px;border:1px solid rgb(174, 2, 221);">
+                            <!--    style="margin-bottom:20px;margin-left:30px;"-->
+                            <option selected>All Courts</option>
+                            <option value="1">Court-1</option>
+                            <option value="2">Court-2</option>
+                            <option value="3">Court-3</option>
+                            <option value="4">Court-4</option>
+                            <option value="5">Court-5</option>
+                            <option value="6">Court-6</option>
+                            <option value="7">Court-7</option>
+                            <option value="8">Court-8</option>
+                        </select>
+                        <div class="col-lg-4 col-md-4 col-xs-8">
+                            <div id="divParentCourt1" class="card card-Black" style="margin-bottom:5px;">
+                                <div>
+                                    <div id="divCourt1" class="font-white">
+                                        <large class="text-muted">
+
+                                        </large>
+                                    </div>
+                                </div>
+                                <div id="divCourt1Footer" class="card-footer card-footer-Padding">
+
+                                </div>
+                            </div>
+                            <div id="divParentCourt2" class="card card-Black" style="margin-bottom:5px;">
+                                <div>
+                                    <div id="divCourt2" class="font-white">
+                                        <large class="text-muted">
+
+                                        </large>
+                                    </div>
+                                </div>
+                                <div id="divCourt2Footer" class="card-footer card-footer-Padding">
+
+                                </div>
+                            </div>
+                            <div id="divParentCourt3" class="card card-Black" style="margin-bottom:5px;">
+                                <div>
+                                    <div id="divCourt3" class="font-white">
+                                        <large class="text-muted">
+
+                                        </large>
+                                    </div>
+                                </div>
+                                <div id="divCourt3Footer" class="card-footer card-footer-Padding">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-xs-8">
+                            <div id="divParentCourt4" class="card card-Black" style="margin-bottom:5px;">
+                                <div>
+                                    <div id="divCourt4" class="font-white">
+                                        <large class="text-muted">
+
+                                        </large>
+                                    </div>
+                                </div>
+                                <div id="divCourt4Footer" class="card-footer card-footer-Padding">
+
+                                </div>
+                            </div>
+
+                            <div id="divParentCourt5" class="card card-Black" style="margin-bottom:5px;">
+                                <div>
+                                    <div id="divCourt5" class="font-white">
+                                        <large class="text-muted">
+
+                                        </large>
+                                    </div>
+                                </div>
+                                <div id="divCourt5Footer" class="card-footer card-footer-Padding">
+
+                                </div>
+                            </div>
+                            <div id="divParentCourt6" class="card card-Black" style="margin-bottom:5px;">
+                                <div>
+                                    <div id="divCourt6" class="font-white">
+                                        <large class="text-muted">
+
+                                        </large>
+                                    </div>
+                                </div>
+                                <div id="divCourt6Footer" class="card-footer card-footer-Padding">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-xs-8">
+                            <div id="divParentCourt7" class="card card-Black" style="margin-bottom:5px;">
+                                <div>
+                                    <div id="divCourt7" class="font-white">
+                                        <large class="text-muted">
+
+                                        </large>
+                                    </div>
+                                </div>
+                                <div id="divCourt7Footer" class="card-footer card-footer-Padding">
+
+                                </div>
+                            </div>
+                            <div id="divParentCourt8" class="card card-Black" style="margin-bottom:5px;">
+                                <div>
+                                    <div id="divCourt8" class="font-white">
+                                        <large class="text-muted">
+
+                                        </large>
+                                    </div>
+                                </div>
+                                <div id="divCourt8Footer" class="card-footer card-footer-Padding">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="playingList" class="col-lg-3">
+            <h2 class="deep-orange white-text" style="border-radius: 15px 0px;padding: 10px;border: 2px solid rgb(174, 2, 221);">Playing List <i class="fa fa-list-ol" aria-hidden="true"></i></h2>
+            <input id="txtPlaying" class="form-control" type="text" placeholder="Scan/Enter MembershipID" multiple="true" rows="3" autofocus maxlength="20" style="border-radius:10px;border:1px solid rgb(174, 2, 221);" />
+            @using (Html.BeginForm())
+            {
+                <div id="urlGetAvailableList" data-request-url="@Url.Action("GetAvailableList", "Home")"></div>
+                <div id="urlGetGameList" data-request-url="@Url.Action("GetGameBoard", "Home")"></div>
+                <div id="urlGetWaitingList" data-request-url="@Url.Action("GetWaitingList", "Home")"></div>
+                <div id="urlSaveAvailableList" data-request-url="@Url.Action("AddToWaitingListFromSearch", "Home")"></div>
+                <div id="urlSaveWaitingList" data-request-url="@Url.Action("AddToWaitingList", "Home")"></div>
+                <div id="urlDeleteFromGameBoardByMembershipID" data-request-url="@Url.Action("DeleteFromGameBoardByMembershipID", "Home")"></div>
+                <div id="urlSaveGameBoard" data-request-url="@Url.Action("AddToGameBoard", "Home")"></div>
+                <div id="urlSaveWaitingListNodeStatus" data-request-url="@Url.Action("WaitingListUpdateStatus", "Home")"></div>
+                <div id="urlDeleteFromGameBoard" data-request-url="@Url.Action("DeleteFromGameBoard", "Home")"></div>
+                @*<div id="urlSaveWaitingList" data-request-url="@Url.Action("SaveMenuGroups", "Home")"></div>*@
+                <div class="col-sm-12" >
+                    <div id="divPlayingList" style="background-color:#fff;border-radius:5px;border:1px solid deeppink;">
+                    </div>
+                </div>
+            }
+            @*<div id="divPlayingList">
+                    <ul>
+                        <li data-nodeid="-999" id="root" data-jstree='{"icon":"glyphicon glyphicon-tree-deciduous sourceGlyphs", "state" : {"opened" : true} }'>
+                            <a data-nodeid="-999" href="#">playingParentID</a>
+
+                            <ul>
+                                <li id="text11" data-jstree='{"icon":"glyphicon glyphicon-home sourceGlyphs","state" : {"opened" : true} }'>
+                                <a data-nodeid="playingChildID" href="#">playingChildID</a>
+                            </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>*@
+        </div>
+        
+    </div>
+</div>
+
+@section scripts{
+    @*"create_node" function is customized, as node parameter passed is not element, but text. So please refer the jstree.js file instead of jstree.min.js.*@
+    <script src="~/js/bootstapAlerts.js" type="text/javascript"></script>
+    <script src="~/js/jstree.min.js" type="text/javascript"></script>
+    @*<script src="~/js/stopWatch.js" type="text/javascript"></script>*@
+    <script src="~/js/TBTTConstants.min.js" type="text/javascript"></script>
+    <script src="~/js/Index.js" type="text/javascript"></script>
+    <script src="~/js/gamingBoard.js" type="text/javascript"></script>
+    <script src="~/js/gamingBoard_2.js" type="text/javascript"></script>
+    <script src="~/js/gamingBoard_3.js" type="text/javascript"></script>
+    <script src="~/js/gamingBoard_4.js" type="text/javascript"></script>
+    <script src="~/js/gamingBoard_5.js" type="text/javascript"></script>
+    <script src="~/js/gamingBoard_6.js" type="text/javascript"></script>
+    <script src="~/js/gamingBoard_7.js" type="text/javascript"></script>
+    <script src="~/js/gamingBoard_8.js" type="text/javascript"></script>
+    <!--<script src="~/js/gamingBoard_9.min.js" type="text/javascript"></script>-->
+}

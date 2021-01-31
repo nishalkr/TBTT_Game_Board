@@ -1,0 +1,8 @@
+C:\NC_Projects\TBTT_Application\TBTT_Data\bin\Release\netcoreapp3.1\TBTT_Data.deps.json
+C:\NC_Projects\TBTT_Application\TBTT_Data\bin\Release\netcoreapp3.1\TBTT_Data.dll
+C:\NC_Projects\TBTT_Application\TBTT_Data\bin\Release\netcoreapp3.1\TBTT_Data.pdb
+C:\NC_Projects\TBTT_Application\TBTT_Data\obj\Release\netcoreapp3.1\TBTT_Data.AssemblyInfoInputs.cache
+C:\NC_Projects\TBTT_Application\TBTT_Data\obj\Release\netcoreapp3.1\TBTT_Data.AssemblyInfo.cs
+C:\NC_Projects\TBTT_Application\TBTT_Data\obj\Release\netcoreapp3.1\TBTT_Data.dll
+C:\NC_Projects\TBTT_Application\TBTT_Data\obj\Release\netcoreapp3.1\TBTT_Data.pdb
+C:\NC_Projects\TBTT_Application\TBTT_Data\obj\Release\netcoreapp3.1\TBTT_Data.csprojAssemblyReference.cache

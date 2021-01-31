@@ -1,0 +1,115 @@
+[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "node_modules/jquery/dist/jquery.js",
+      "wwwroot/js/site.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/gamingBoard.min.js",
+    "inputFiles": [
+      "wwwroot/js/gamingBoard.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/gamingBoard_2.min.js",
+    "inputFiles": [
+      "wwwroot/js/gamingBoard_2.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/gamingBoard_3.min.js",
+    "inputFiles": [
+      "wwwroot/js/gamingBoard_3.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/gamingBoard_4.min.js",
+    "inputFiles": [
+      "wwwroot/js/gamingBoard_4.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/gamingBoard_5.min.js",
+    "inputFiles": [
+      "wwwroot/js/gamingBoard_5.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/gamingBoard_6.min.js",
+    "inputFiles": [
+      "wwwroot/js/gamingBoard_6.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/gamingBoard_7.min.js",
+    "inputFiles": [
+      "wwwroot/js/gamingBoard_7.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/gamingBoard_8.min.js",
+    "inputFiles": [
+      "wwwroot/js/gamingBoard_8.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/gamingBoard_9.min.js",
+    "inputFiles": [
+      "wwwroot/js/gamingBoard_9.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/Index.min.js",
+    "inputFiles": [
+      "wwwroot/js/Index.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/config.min.js",
+    "inputFiles": [
+      "wwwroot/js/config.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/tbtt.min.css",
+    "inputFiles": [
+      "wwwroot/css/tbtt.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/TBTTConstants.min.js",
+    "inputFiles": [
+      "wwwroot/js/TBTTConstants.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/jstree.min.js",
+    "inputFiles": [
+      "wwwroot/js/jstree.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/bootstapAlerts.min.js",
+    "inputFiles": [
+      "wwwroot/js/bootstapAlerts.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/main.min.js",
+    "inputFiles": [
+      "wwwroot/js/main.js"
+    ]
+  }
+]

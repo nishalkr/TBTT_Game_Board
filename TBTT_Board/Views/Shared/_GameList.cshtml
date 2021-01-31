@@ -1,0 +1,44 @@
+﻿@model IEnumerable<TBTT_Board.Models.GameViewModel>
+    <ul id="gameSelector">
+        @{ int intCounter = 0; string className = "fa fa-user-circle-o fa-color-white"; bool isDoubles = true; int intCourtTypeCount = 4;}
+
+        @foreach (var item in Model)
+        {
+            @if (!item.IsDoubles)
+            {
+                intCourtTypeCount = 2;
+            }
+
+            intCounter = intCounter + 1;
+            @if (intCounter > intCourtTypeCount)
+            {
+                <li class="GameScoreSelector" data-jstree='{"icon": "fa fa-user-circle-o fa-color-blue","state" : {"opened" : true, "disable_node" : true }}'>
+                    @if ((item.MembershipType == "M") || (item.MembershipType == "G"))
+                    {
+                        <a class="additionalMember" data-nodeid="@item.MembershipID" data-nodeCourt="@item.CourtName" data-minGameStartTime="@item.MinGameStartDate" data-gameElapsedTime="@item.GameStopWatchstartMin" data-nodemembershiptype="@item.MembershipType" data-nodecount="@item.NodeCounter" data-nodeOrderID="@item.OrderID" data-nodemembername="@item.MemberName" href="#">(R)@item.MemberName</a>
+                    }
+                    else
+                    {
+                <a class="nonMember additionalMember" data-nodeid="@item.MembershipID" data-nodeCourt="@item.CourtName" data-minGameStartTime="@item.MinGameStartDate" data-gameElapsedTime="@item.GameStopWatchstartMin" data-nodemembershiptype="@item.MembershipType" data-nodecount="@item.NodeCounter" data-nodeOrderID="@item.OrderID" data-nodemembername="@item.MemberName" href="#">(R)@item.MemberName</a>
+                    }
+
+                </li>
+            }
+            else
+            {
+                <li class="GameScoreSelector" data-jstree='{"icon": "fa fa-user-circle-o fa-color-black","state" : {"opened" : true, "disable_node" : true }}'>
+                    @if ((item.MembershipType == "M") || (item.MembershipType == "G"))
+                    {
+                        <a data-nodeid="@item.MembershipID" data-nodeCourt="@item.CourtName" data-minGameStartTime="@item.MinGameStartDate" data-gameElapsedTime="@item.GameStopWatchstartMin" data-nodemembershiptype="@item.MembershipType" data-nodecount="@item.NodeCounter" data-nodeOrderID="@item.OrderID" data-nodemembername="@item.MemberName" href="#">&nbsp;@item.MemberName</a>
+                    }
+                    else
+                    {
+                        <a class="nonMember" data-nodeid="@item.MembershipID" data-nodeCourt="@item.CourtName" data-minGameStartTime="@item.MinGameStartDate" data-gameElapsedTime="@item.GameStopWatchstartMin" data-nodemembershiptype="@item.MembershipType" data-nodecount="@item.NodeCounter" data-nodeOrderID="@item.OrderID" data-nodemembername="@item.MemberName" href="#">&nbsp;@item.MemberName</a>
+                    }
+
+                </li>
+            }
+
+
+        }
+    </ul>
