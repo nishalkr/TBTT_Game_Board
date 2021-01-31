@@ -526,10 +526,12 @@ $(function () {
             else if (!(formData.startsWith("B0")) || (formData.startsWith("B9"))) {
                 objMsg.innerHTML = 'Membership ID should start with B0 or B9. Please contact front desk for any questions.'
                 objMsg.style.display = "block";
+                objMsg.value = '';
             }
             else if (!(formData.length >= 6)) {
                 objMsg.innerHTML = 'Invalid MembershipID - ' + formData + '. Please contact front desk for any questions.'
                 objMsg.style.display = "block";
+                objMsg.value = '';
                 return;
             }
             else {
