@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shyam\\source\\repos\\TBTT_Game_Board1\\TBTT_Data\\TBTT_Data.csproj": {}
+    "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Data\\TBTT_Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shyam\\source\\repos\\TBTT_Game_Board1\\TBTT_Data\\TBTT_Data.csproj": {
+    "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Data\\TBTT_Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shyam\\source\\repos\\TBTT_Game_Board1\\TBTT_Data\\TBTT_Data.csproj",
+        "projectUniqueName": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Data\\TBTT_Data.csproj",
         "projectName": "TBTT_Data",
-        "projectPath": "C:\\Users\\shyam\\source\\repos\\TBTT_Game_Board1\\TBTT_Data\\TBTT_Data.csproj",
+        "projectPath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Data\\TBTT_Data.csproj",
         "packagesPath": "C:\\Users\\shyam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shyam\\source\\repos\\TBTT_Game_Board1\\TBTT_Data\\obj\\",
+        "outputPath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -43,6 +43,36 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.30, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
+            "MongoDB.Driver.Core": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -53,6 +83,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }

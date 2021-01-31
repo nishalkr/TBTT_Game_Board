@@ -9323,11 +9323,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board\\TBTT_Board\\TBTT_Board.csproj",
+      "projectUniqueName": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Board\\TBTT_Board.csproj",
       "projectName": "TBTT_Board",
-      "projectPath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board\\TBTT_Board\\TBTT_Board.csproj",
+      "projectPath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Board\\TBTT_Board.csproj",
       "packagesPath": "C:\\Users\\shyam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board\\TBTT_Board\\obj\\",
+      "outputPath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Board\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -9348,11 +9348,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board\\TBTT_Data\\TBTT_Data.csproj": {
-              "projectPath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board\\TBTT_Data\\TBTT_Data.csproj"
+            "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Data\\TBTT_Data.csproj": {
+              "projectPath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Data\\TBTT_Data.csproj"
             },
-            "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board\\TBTT_Logging\\TBTT_Logging.csproj": {
-              "projectPath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board\\TBTT_Logging\\TBTT_Logging.csproj"
+            "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Logging\\TBTT_Logging.csproj": {
+              "projectPath": "C:\\Users\\shyam\\Source\\Repos\\TBTT_Game_Board1\\TBTT_Game_Board\\TBTT_Logging\\TBTT_Logging.csproj"
             }
           }
         }

@@ -36,3 +36,12 @@ C:\Users\shyam\Source\Repos\TBTT_Game_Board\TBTT_Data\obj\Debug\netcoreapp3.1\TB
 C:\Users\shyam\Source\Repos\TBTT_Game_Board\TBTT_Data\obj\Debug\netcoreapp3.1\TBTT_Data.csproj.CoreCompileInputs.cache
 C:\Users\shyam\Source\Repos\TBTT_Game_Board\TBTT_Data\obj\Debug\netcoreapp3.1\TBTT_Data.dll
 C:\Users\shyam\Source\Repos\TBTT_Game_Board\TBTT_Data\obj\Debug\netcoreapp3.1\TBTT_Data.pdb
+C:\Users\shyam\Source\Repos\TBTT_Game_Board1\TBTT_Game_Board\TBTT_Data\bin\Debug\netcoreapp3.1\TBTT_Data.deps.json
+C:\Users\shyam\Source\Repos\TBTT_Game_Board1\TBTT_Game_Board\TBTT_Data\bin\Debug\netcoreapp3.1\TBTT_Data.dll
+C:\Users\shyam\Source\Repos\TBTT_Game_Board1\TBTT_Game_Board\TBTT_Data\bin\Debug\netcoreapp3.1\TBTT_Data.pdb
+C:\Users\shyam\Source\Repos\TBTT_Game_Board1\TBTT_Game_Board\TBTT_Data\obj\Debug\netcoreapp3.1\TBTT_Data.csprojAssemblyReference.cache
+C:\Users\shyam\Source\Repos\TBTT_Game_Board1\TBTT_Game_Board\TBTT_Data\obj\Debug\netcoreapp3.1\TBTT_Data.AssemblyInfoInputs.cache
+C:\Users\shyam\Source\Repos\TBTT_Game_Board1\TBTT_Game_Board\TBTT_Data\obj\Debug\netcoreapp3.1\TBTT_Data.AssemblyInfo.cs
+C:\Users\shyam\Source\Repos\TBTT_Game_Board1\TBTT_Game_Board\TBTT_Data\obj\Debug\netcoreapp3.1\TBTT_Data.csproj.CoreCompileInputs.cache
+C:\Users\shyam\Source\Repos\TBTT_Game_Board1\TBTT_Game_Board\TBTT_Data\obj\Debug\netcoreapp3.1\TBTT_Data.dll
+C:\Users\shyam\Source\Repos\TBTT_Game_Board1\TBTT_Game_Board\TBTT_Data\obj\Debug\netcoreapp3.1\TBTT_Data.pdb
