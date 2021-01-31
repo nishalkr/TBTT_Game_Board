@@ -18,13 +18,7 @@
 </div>
 <div class="container-fluid">
 
-    <div class="form-group row" style="display:none">
-        <div class="container">
-            <div class="row">
-                <textarea id="txtMembershipID" readonly class="form-control" type="text" multiple="true" placeholder="Scan/Enter MembershipID" autofocus maxlength="50" cols="10" rows="3"></textarea>
-            </div>
-        </div>
-    </div>
+    
     <div class="form-group row">
         <div id="divMsg" class="alert alert-danger col-lg-12" role="alert"></div>
     </div>
@@ -37,7 +31,7 @@
             <div class="col-12">
                 <div class="container">
                     <div class="row">
-                        <select id="ddlGame" class="form-control col-md-12" onchange="onSelectChange()" style="margin-bottom:10px;">
+                        <select id="ddlGame" class="form-control col-md-12" onchange="onSelectChange()" style="margin-bottom:10px;border:1px solid rgb(174, 2, 221);">
                             <!--    style="margin-bottom:20px;margin-left:30px;"-->
                             <option selected>All Courts</option>
                             <option value="1">Court-1</option>
@@ -62,7 +56,6 @@
 
                                 </div>
                             </div>
-
                             <div id="divParentCourt2" class="card card-Black" style="margin-bottom:5px;">
                                 <div>
                                     <div id="divCourt2" class="font-white">
@@ -75,7 +68,6 @@
 
                                 </div>
                             </div>
-
                             <div id="divParentCourt3" class="card card-Black" style="margin-bottom:5px;">
                                 <div>
                                     <div id="divCourt3" class="font-white">
@@ -88,7 +80,6 @@
 
                                 </div>
                             </div>
-
                         </div>
                         <div class="col-lg-4 col-md-4 col-xs-8">
                             <div id="divParentCourt4" class="card card-Black" style="margin-bottom:5px;">
@@ -103,6 +94,7 @@
 
                                 </div>
                             </div>
+
                             <div id="divParentCourt5" class="card card-Black" style="margin-bottom:5px;">
                                 <div>
                                     <div id="divCourt5" class="font-white">
@@ -115,7 +107,6 @@
 
                                 </div>
                             </div>
-
                             <div id="divParentCourt6" class="card card-Black" style="margin-bottom:5px;">
                                 <div>
                                     <div id="divCourt6" class="font-white">
@@ -128,20 +119,6 @@
 
                                 </div>
                             </div>
-
-
-                            <!--<div id="divParentCourt9" class="card card-Black" style="display:none;">
-                                <div class="card-body">
-                                    <div id="divCourt9" class="font-white">
-                                        <large class="text-muted">
-
-                                        </large>
-                                    </div>
-                                </div>
-                                <div id="divCourt9Footer" class="card-footer card-footer-Padding">
-
-                                </div>
-                            </div>-->
                         </div>
                         <div class="col-lg-4 col-md-4 col-xs-8">
                             <div id="divParentCourt7" class="card card-Black" style="margin-bottom:5px;">
@@ -156,7 +133,6 @@
 
                                 </div>
                             </div>
-
                             <div id="divParentCourt8" class="card card-Black" style="margin-bottom:5px;">
                                 <div>
                                     <div id="divCourt8" class="font-white">
@@ -178,7 +154,7 @@
 
         <div id="playingList" class="col-lg-3 menutree">
             <h2 class="deep-orange white-text">Playing List <i class="fa fa-list-ol" aria-hidden="true"></i></h2>
-            <input id="txtPlaying" class="form-control" type="text" placeholder="Search Member" autofocus maxlength="20" />
+            <input id="txtPlaying" class="form-control" type="text" placeholder="Scan/Enter MembershipID" multiple="true" rows="3" autofocus maxlength="20" style="border-radius:10px;border:1px solid rgb(174, 2, 221);"  />
             @using (Html.BeginForm())
             {
                 <div id="urlGetAvailableList" data-request-url="@Url.Action("GetAvailableList", "BadmintonCourt")"></div>
@@ -192,7 +168,7 @@
                 <div id="urlDeleteFromGameBoard" data-request-url="@Url.Action("DeleteFromGameBoard", "BadmintonCourt")"></div>
                 @*<div id="urlSaveWaitingList" data-request-url="@Url.Action("SaveMenuGroups", "BadmintonCourt")"></div>*@
                 <div class="col-sm-12">
-                    <div id="divPlayingList">
+                    <div id="divPlayingList" style="background-color:#fff;border-radius:5px;border:1px solid rgb(174, 2, 221)">
                     </div>
                 </div>
             }
@@ -210,26 +186,7 @@
                     </ul>
                 </div>*@
         </div>
-        <div id="availableList" class="col-lg-3 menutree" style="display:none;">
-            <h2 class="deep-green white-text">Available List <i class="fa fa-users" aria-hidden="true"></i></h2>
-            <input id="txtAvailable" class="form-control" type="text" placeholder="Search Member" autofocus maxlength="20" />
-            <div id="divAvailableList">
-                @*<ul>
-                    <li data-jstree='{"icon":"glyphicon glyphicon-tree-deciduous sourceGlyphs", "state" : {"opened" : true} }'>
-                        <a data-nodeid="availableParentID" href="#">playingParentID</a>*@
-                <ul>
-                    @foreach (var item in Model.AvailableList)
-                    {
-                        <li data-nodeid="@item.MembershipID" data-nodeStatus="@item.NodeState" data-MembershipType="@item.MembershipType" data-jstree='{"icon":"fa fa-user-circle-o","state" : {"opened" : true, "disable_node" : true }}'>
-                            <a href="#">@item.MemberName</a>
-                        </li>
-                    }
-                </ul>
-
-                @*</li>
-                    </ul>*@
-            </div>
-        </div>
+        
     </div>
 </div>
 
