@@ -564,45 +564,57 @@
             }
         }
 
-var dt2 = new Date(dt.valueOf() + 1000);
+        var dt2 = new Date(dt.valueOf() + 1000);
 
 
-var temp = dt2.toTimeString().split(" ");
-var ts = temp[0].split(':');
+        var temp = dt2.toTimeString().split(" ");
+        var ts = temp[0].split(':');
 
-if (ts != null) {
-    if (ts.length > 1) {
-        newElapsedTimeFormated = ts[1] + ":" + ts[2];
-        timecheck = ts[1];
-    }
-    else if (ts.length > 0) {
-        newElapsedTimeFormated = ts[1] + ":" + '0';
-        timecheck = ts[1];
-    }
-}
-
-$(footcourtID).html(newElapsedTimeFormated);
-
-var elapsedMinutes = 0;
-var isReadyToLoad = false;
-if (newElapsedTimeFormated.toString().indexOf(':') != -1) {
-    elapsedTimeArray = '';
-    elapsedTimeArray = newElapsedTimeFormated.toString().split(':');
-
-    if (elapsedTimeArray != null) {
-        if (elapsedTimeArray.length > 0) {
-            elapsedMinutes = elapsedTimeArray[0];
-            elapsedSeconds = elapsedTimeArray[1];
-
-            if ((elapsedMinutes >= elapsedMinutesConstant) || (hourPassed)) { //>=
-                $(footcourtID).html('');                           
+        if (ts != null) {
+            if (ts.length > 1) {
+                newElapsedTimeFormated = ts[1] + ":" + ts[2];
+                timecheck = ts[1];
+            }
+            else if (ts.length > 0) {
+                newElapsedTimeFormated = ts[1] + ":" + '0';
+                timecheck = ts[1];
             }
         }
-    }
-}
+        
+        $(footcourtID).html(newElapsedTimeFormated);
+
+        var elapsedMinutes = 0;
+        var isReadyToLoad = false;
+        if (newElapsedTimeFormated.toString().indexOf(':') != -1) {
+            elapsedTimeArray = '';
+            elapsedTimeArray = newElapsedTimeFormated.toString().split(':');
+
+            if (elapsedTimeArray != null) {
+                if (elapsedTimeArray.length > 0) {
+                    elapsedMinutes = elapsedTimeArray[0];
+                    elapsedSeconds = elapsedTimeArray[1];
+
+                    if (elapsedMinutes >= 19) {
+                        $(footcourtID).css('color', 'Red');
+                        $(footcourtID).css('font-weight', 'bold');
+                        $(footcourtID).css('font-size', '20px');
+
+                        //font-weight: bold;
+                    }
+                    else {
+                        $(footcourtID).css('color', 'green');
+                        $(footcourtID).css('font-weight', 'bold');
+                        $(footcourtID).css('font-size', '20px');
+                    }
+                    if ((elapsedMinutes >= elapsedMinutesConstant) || (hourPassed)) { 
+                        $(footcourtID).html('');
+                    }
+                }
+            }
+        }
 
 
-return;
+        return;
     }
 
 
